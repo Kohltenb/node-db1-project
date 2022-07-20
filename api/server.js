@@ -9,7 +9,7 @@ server.use('/api/accounts', accountsRouter)
 
 server.use('*', (req, res) => {
     res.status(404).json({
-        message: 'Oh no its all broken'
+        message: 'Oh no kohlten'
     })
 })
 
