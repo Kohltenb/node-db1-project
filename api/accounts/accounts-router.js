@@ -21,7 +21,7 @@ router.get('/:id', md.checkAccountId, (req, res, next) => {
 router.post('/', md.checkAccountPayload, md.checkAccountNameUnique, (req, res, next) => {
   // DO YOUR MAGIC
   try {
-
+  
   } catch (err) {
     next(err)
   }
