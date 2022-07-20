@@ -23,6 +23,7 @@ const updateById = (id, account) => {
 
 const deleteById = id => {
   // DO YOUR MAGIC
+  db('accounts').where('id', id).del()
 }
 
 module.exports = {
