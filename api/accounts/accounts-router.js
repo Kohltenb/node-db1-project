@@ -41,21 +41,21 @@ router.put('/:id', md.checkAccountId, md.checkAccountPayload, async (req, res, n
   }
 });
 
-router.delete('/:id', md.checkAccountId, (req, res) => {
-    Account.deleteById(req.params.id)
-})
+// router.delete('/:id', md.checkAccountId, (req, res) => {
+//     Account.deleteById(req.params.id)
+// })
 
 
 //THIS DOES NOT PASS THE TEST?????
 
-// router.delete('/:id', md.checkAccountId, async (req, res, next) => {
-//   try {
-//     await Account.deleteById(req.params.id)
-//     res.json(req.account)
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+router.delete('/:id', md.checkAccountId, async (req, res, next) => {
+  try {
+    await Account.deleteById(req.params.id)
+    res.json(req.account)
+  } catch (err) {
+    next(err)
+  }
+})
 
 
 router.use((err, req, res, next) => { // eslint-disable-line
